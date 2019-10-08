@@ -1,0 +1,12 @@
+<!-- templates/home.html -->
+{% extends 'base.html' %}
+
+{% block content %}
+	{% for post in object_list %}
+		<div class="alert container">
+		<dd><a href="{% url 'post_detail' post.pk %}">{{ post.title }}</a></dd> <br>
+
+		<div class="alert alert-success " role="alert" ><p>{{ post.body }}</p></div>
+		</div>
+	{% endfor %}
+{% endblock content %}
